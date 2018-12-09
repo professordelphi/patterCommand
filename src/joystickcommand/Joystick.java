@@ -13,47 +13,33 @@ import Jogos.*;
  */
 public class Joystick {
 
-   /* Command[] xCommand;
-    Command[] yCommand;*/
+  
     Command[] aCommand;
     Command[] bCommand;
 
     public Joystick(){
-       /* xCommand = new Command[3];
-        yCommand = new Command[3];*/
+    
         aCommand = new Command[3];
         bCommand = new Command[3];
 
         Command noCommand = new noCommand();
 
         for(int i=0;i<3;i++){
-        /*xCommand[i] = noCommand;
-        yCommand[i] = noCommand;*/
+     
         aCommand[i] = noCommand;
         bCommand[i] = noCommand;
          }
        }
 
-    public void setCommand(int slot, /*Command xCommand_, Command yCommand_,*/ Command aCommand_, Command bCommand_){
+    public void setCommand(int slot,  Command aCommand_, Command bCommand_){
 
-       /* xCommand[slot] = xCommand_;
-        yCommand[slot] = yCommand_;*/
+
         aCommand[slot] = aCommand_;
         bCommand[slot] = bCommand_;
 
     }
 
-    /*public void apertaX(int slot){
-
-        xCommand[slot].executa();
-
-    }
-
-      public void apertaY(int slot){
-
-        yCommand[slot].executa();
-
-    }*/
+   
 
      public void apertaA(int slot){
 
@@ -73,8 +59,7 @@ public class Joystick {
         StringBuffer stringBuff = new StringBuffer();
         stringBuff.append("\n----JOYSTICK EM FUNCIONAMENTO----\n");
         for (int i=0; i<aCommand.length;i++){
-         stringBuff.append("[slot "+i+"]" /*+ xCommand[i].getClass().getName()+" ||  "
-                 + yCommand[i].getClass().getName()+" ||  "*/+ aCommand[i].getClass().getName()+" ||  "+ bCommand[i].getClass().getName()+"\n");
+         stringBuff.append("[slot "+i+"]"+ aCommand[i].getClass().getName()+" ||  "+ bCommand[i].getClass().getName()+"\n");
          }
          return stringBuff.toString();
         }
